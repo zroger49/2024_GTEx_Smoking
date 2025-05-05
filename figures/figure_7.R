@@ -3,7 +3,6 @@
 # @Date:   2022-03-24
 # @Description: Generate publication Figure 6 (Gene expression reversability and Machine learning results)
 
-
 #Set path 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -58,7 +57,7 @@ colours <- gray.colors(200, start = 0, end = 1)[c(200:70)]
 
 pdf("figures/figure_7/heatmap_reverse_genes.pdf",  w = 7 , h = 14)
 Heatmap(as.matrix(reversability_per_tissue[,c(3,2,4)] + 1),
-        col = brewer.pal(9,"BuPu")[1:7],
+        col = brewer.pal(9,"BuPu")[1:6],
         width = 3*unit(15, "mm"), 
         height = ncol(reversability_per_tissue)*unit(15, "mm"), 
         na_col = "white",
@@ -83,7 +82,7 @@ row.names(meth_reverse_data)[2] <-  "Colon transverse"
 
 pdf("figures/figure_7/heatmap_reverse_loci.pdf",  w = 5, h = 3)
 Heatmap(as.matrix(meth_reverse_data),
-        col = brewer.pal(9,"BuPu")[1:7],
+        col = brewer.pal(9,"BuPu")[1:6],
         width = 3*unit(15, "mm"), 
         height =  unit(12, "mm"),  
         na_col = "white",
